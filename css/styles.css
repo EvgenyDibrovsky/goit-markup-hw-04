@@ -594,6 +594,7 @@ a {
 
 .footer-row {
     display: flex;
+    align-items: baseline;
 }
 
 .footer .logo  {
@@ -639,7 +640,6 @@ color: var(--accent-color);
 .widget-social {
     display: block;
     min-width: 206px;
-    padding-top: 12px;
 } 
 
 .footer-title {
