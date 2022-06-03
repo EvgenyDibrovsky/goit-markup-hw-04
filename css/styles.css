@@ -4,6 +4,8 @@
     --secondary-font-color: #757575;
     --font-color-white: #ffffff;
 
+    --main-header-border: #ECECEC;
+
     --logo-color-dark: #000000;
     --logo-color-light: #ffffff;
 
@@ -13,14 +15,22 @@
     --portfolio-btn: #F5F4FA;
     --portfolio-select-hover: #2196F3;
     --portfolio-select-active: #2196F3;
+    --bg-portfolio-cards: #FFFFFF;
+    --border-portfolio-cards: #EEEEEE;
   
     --bg-primary: #FFFFFF;
     --bg-section-dark: #2F303A;
     --bg-section-light: #F5F4FA;
+    --bg-skills: #F5F4FA;
     --bg-footer: #2F303A;
 
     --footer-font-white: #ffffff;
     --footer-font-white-transparent: rgba(255, 255, 255, 0.6);
+
+    --icon-color-primary: #AFB1B8;
+    --icon-border: #AFB1B8;
+    --icon-color-white: #ffffff;
+    --bg-icon-white: #ffffff;
 }
 
 body {
@@ -88,7 +98,7 @@ a {
 /* -------------------- HEADER -------------------- */
 
 .main-header {
-    border-bottom: 1px solid #ECECEC;
+    border-bottom: 1px solid var(--main-header-border);
 }
 
 .page-header-container {
@@ -147,7 +157,8 @@ a {
 }
 
 .header-contacts-link {
-    display: block;
+    display: flex;
+    align-items:center;
     padding-top: 32px;
     padding-bottom: 32px;
     font-weight: 500;
@@ -160,6 +171,16 @@ a {
 .header-contacts-link:hover,
 .header-contacts-link:focus {
     color: var(--accent-color);
+}
+
+.header-contacts-icon {
+    margin-right: 10px;
+    fill: currentColor;
+}
+
+.header-contacts-link:hover .header-contacts-icon,
+.header-contacts-link:focus .header-contacts-icon {
+  fill: var(--accent-color);
 }
 
 /* -------------------- /HEADER -------------------- */
@@ -274,6 +295,16 @@ a {
     margin-bottom: 30px;
 }
 
+.overlay {
+    height: 600px;
+    max-width: 1600px;
+    margin-left: auto;
+    margin-right: auto;
+    background-image: linear-gradient(rgba(47, 48, 58, 0.4),rgba(47, 48, 58, 0.4)), url(../images/hero.jpg);
+    background-position: center;
+    background-size: cover;
+}
+
 /* -------------------- /HERO -------------------- */
 
 
@@ -298,6 +329,21 @@ a {
 
 .advantages-item:not(:nth-last-child(-n + 4)) {
     margin-bottom: 30px;
+}
+
+.advantages-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 120px;
+    border-radius: 4px;
+    margin-bottom: 30px;
+    background-color: var(--bg-skills);
+}
+
+.advantages-item-icon {
+    height: 70px;
+    width: 70px; 
 }
 
 .advantages-title {
@@ -360,6 +406,7 @@ a {
     text-align: center;
     letter-spacing: 0.03em;
     color: var(--secondary-font-color);
+    margin-bottom: 16px;
 }
 
 .team-list {
@@ -387,7 +434,88 @@ a {
     padding-bottom: 30px;
 }
 
+.social-list {
+    display: flex;
+    justify-content: center;
+}
+
+.social-list-item {
+    width: 44px;
+    height: 44px;
+}
+
+.social-list-item:not(:last-child) {
+    margin-right: 10px;
+}
+
+.social-list-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-color: transparent;
+    color: var(--icon-color-primary)
+}
+
+.social-list-link:hover,
+.social-list-link:focus {
+    background-color: var(--accent-color);
+}
+
+.social-list-link:hover .social-list-icon,
+.social-list-link:focus .social-list-icon {
+    fill: var(--icon-color-white);
+}
+
+.social-list-icon {
+    width: 20px;
+    height: 20px;
+    fill: currentColor;
+}
+
 /* -------------------- /TEAM -------------------- */
+
+
+/* -------------------- CLIENTS -------------------- */
+
+.client-list {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.client-item:not(:nth-child(6n)) {
+    margin-right: 30px;
+}
+
+.client-item:not(:nth-last-child(-n + 6)) {
+    margin-bottom: 30px;
+}
+
+.client-list-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 170px;
+    height: 92px;
+    border: 1px solid var(--icon-color-primary);
+    color: var(--icon-color-primary);
+    border-radius: 4px;
+}
+
+.client-list-icon {
+    width: 106px;
+    height: 60px;
+    fill: currentColor;
+}
+
+.client-list-icon:hover,
+.client-list-icon:focus {
+    fill: var(--accent-color);
+}
+
+/* -------------------- /CLIENTS -------------------- */
 
 
 /* -------------------- PORTFOLIO -------------------- */
@@ -419,14 +547,19 @@ a {
     margin-bottom: 30px;
 }
 
+.porfolio-item:hover,
+.porfolio-item:focus {
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
+}
+
 .portfolio-card-content-wrapper {
     padding-top: 20px;
     padding-bottom: 20px;
     padding-left: 24px;
     padding-right: 24px;
-    border: 1px solid #EEEEEE;
+    border: 1px solid var(--border-portfolio-cards);
     border-top: none;
-    background: #FFFFFF;
+    background-color: var(--bg-portfolio-cards);
 }
 
 .porfolio-item-title {
@@ -456,10 +589,20 @@ a {
     padding-bottom: 60px;
 }
 
+.footer-row {
+    display: flex;
+}
+
 .footer .logo  {
     display: inline-block;
     margin-bottom: 20px;
     margin-right: 0px;
+}
+
+.widgent-contacts {
+    display: block;
+    min-width: 231px;
+    margin-right: 70px;
 }
 
 .address {
@@ -488,6 +631,57 @@ color: var(--footer-font-white);
 .footer-contacts-link:hover,
 .footer-contacts-link:focus {
 color: var(--accent-color);
+}
+
+.widget-social {
+    display: block;
+    min-width: 206px;
+    padding-top: 12px;
+} 
+
+.footer-title {
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 1.14;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    color: var(--footer-font-white);
+    margin-bottom: 20px;
+}
+
+.footer-social-list {
+    display: flex;
+}
+
+.footer-social-item {
+    width: 44px;
+    height: 44px;
+}
+
+.footer-social-item:not(:last-child) {
+    margin-right: 10px;
+}
+
+.footer-social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.1);
+    color:var(--icon-color-white);
+}
+
+.footer-social-link:hover,
+.footer-social-link:focus {
+    background-color: var(--accent-color);
+}
+
+.footer-social-icon {
+    fill: currentColor;
+    width: 20px;
+    height: 20px;
 }
 
 /* -------------------- /FOOTER -------------------- */
