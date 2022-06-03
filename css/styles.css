@@ -503,6 +503,9 @@ a {
     color: var(--icon-color-primary);
     border-radius: 4px;
 }
+.client-list-link:hover {
+    border: 1px solid var(--accent-color);
+}
 
 .client-list-icon {
     width: 106px;
@@ -510,8 +513,8 @@ a {
     fill: currentColor;
 }
 
-.client-list-icon:hover,
-.client-list-icon:focus {
+.client-list-link:hover .client-list-icon,
+.client-list-link:focus .client-list-icon {
     fill: var(--accent-color);
 }
 
